@@ -7,11 +7,10 @@ const __filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(__filename)
 
 const nextConfig: NextConfig = {
+  allowedDevOrigins: ['26.238.58.251'],
   images: {
     localPatterns: [
-      {
-        pathname: '/api/media/file/**',
-      },
+      { pathname: '/api/media/file/**', },
     ],
   },
   webpack: (webpackConfig) => {

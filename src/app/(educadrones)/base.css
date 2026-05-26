@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* ── AZUL (cor principal) ── */
+  --color-ds-blue-5:   #EEF4FB;
+  --color-ds-blue-10:  #D6E8F5;
+  --color-ds-blue-20:  #A8CCEA;
+  --color-ds-blue-40:  #5A9DD4;
+  --color-ds-blue-60:  #1A72B8;
+  --color-ds-blue-100: #005CA6;
+  --color-ds-blue-110: #004D8C;
+  --color-ds-blue-120: #003D70;
+  --color-ds-blue-130: #002E63;
+
+  /* ── AMARELO / AREIA (acento) ── */
+  --color-ds-yellow-5:   #FDFAF2;
+  --color-ds-yellow-10:  #F8F5EE;
+  --color-ds-yellow-20:  #F1EBD0;
+  --color-ds-yellow-40:  #E8D99A;
+  --color-ds-yellow-60:  #D4B94A;
+  --color-ds-yellow-80:  #C09A20;
+  --color-ds-yellow-100: #A67F00;
+  --color-ds-yellow-120: #856500;
+
+  /* ── VERDE (STEAM / sucesso) ── */
+  --color-ds-green-10:  #E8F7F0;
+  --color-ds-green-40:  #6DC49A;
+  --color-ds-green-100: #1A9E5F;
+  --color-ds-green-120: #117A48;
+  --color-ds-green-140: #0A5732;
+
+  /* ── NEUTRAS ── */
+  --color-ds-neutral-900: #000000;
+  --color-ds-neutral-600: #121212;
+  --color-ds-neutral-500: #393939;
+  --color-ds-neutral-400: #3E3E3E;
+  --color-ds-neutral-350: #797979;
+  --color-ds-neutral-300: #9A9A9A;
+  --color-ds-neutral-200: #CACACA;
+  --color-ds-neutral-150: #E0E0E0;
+  --color-ds-neutral-100: #EDEDED;
+  --color-ds-neutral-50:  #F7F7F7;
+  --color-ds-neutral-0:   #FFFFFF;
+
+  /* ── TIPOGRAFIA ── */
+  --font-ds-base: 'Poppins', sans-serif;
+}
+
+@theme inline {
+  /* ── SEMÂNTICAS ── */
+  --color-ds-success: var(--color-ds-green-100);
+  --color-ds-error:   #D93025;
+  --color-ds-warning: var(--color-ds-yellow-60);
+  --color-ds-info:    var(--color-ds-blue-100);
+}
+
+@layer base {
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html{
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-ds-blue-gradient {
+    background: linear-gradient(135deg, #1A72B8 0%, #002E63 100%);
+  }
+
+  .bg-ds-green-gradient {
+    background: linear-gradient(135deg, #6DC49A 0%, #0A5732 100%);
+  }
+
+  .bg-ds-yellow-gradient {
+    background: linear-gradient(135deg, #E8D99A 0%, #A67F00 100%);
+  }
+
+  .px-desktop {
+    padding-inline: 2.5rem;
+  }
+
+  .px-mobile {
+    padding-inline: 1.25rem;
+  }
+  
+}

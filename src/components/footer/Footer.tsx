@@ -21,31 +21,12 @@ async function Footer() {
   const payload = await getPayload({config})
   const footer = await payload.findGlobal({ slug: 'footer' })
 
-  const programasMenu: any[] = [
-    {
-      label: 'Montagem e Configuração de Drones',
-      href: '#'
-    },
-    {
-      label: 'Pilotagem de Drones',
-      href: '#'
-    },
-    {
-      label: 'OBaDrones',
-      href: '#'
-    },
-    {
-      label: 'Colibri',
-      href: '#'
-    }
-  ]
-
   return(
     <footer className="footer bg-ds-blue-100 flex flex-col items-center md:px-10 px-5 py-8 gap-8 text-ds-yellow-10">
       {/* INFORMAÇÕES ADICIONAIS E MENUS */}
-      <div className="footer__content max-w-[1400px] w-full flex gap-8">
-        <div className="footer__wrapper flex-1">
-          <div className="footer__wrapper flex flex-col gap-2 max-w-[320px]">
+      <div className="footer__content max-w-[1400px] w-full flex flex-wrap gap-8">
+        <div className="footer__wrapper flex-1 basis-[320px]">
+          <div className="footer__wrapper flex flex-col gap-2 lg:max-w-[320px]">
             <h2 className="footer__title font-medium">Educa Drones</h2>
             <p className="footer__text text-sm text-ds-blue-20">Têm interesse em levar o projeto para sua escola ou universidade? Entre em contato através do email ou por nossas redes sociais</p>
 
@@ -55,14 +36,14 @@ async function Footer() {
         </div>
 
         {/* MENUS */}
-        <div className="footer__wrapper flex flex-2 gap-4 justify-between">
+        <div className="footer__wrapper flex flex-2 gap-8 basis-[620px] justify-between flex-wrap">
 
           {footer.menus.map(menu => (
             <FooterNav key={menu.id} title={menu.title} links={menu.links}/>
           ))}
 
           {/* Informações de Contato */}
-          <div className="footer__wrapper flex flex-col gap-3">
+          <div className="footer__wrapper flex flex-col gap-3 basis-[240px] md:basis-auto flex-1">
             <h2 className="footer__title text-[0.75rem] uppercase font-bold text-ds-blue-20">CONTATO</h2>
 
             <ul className="footer__list text-sm/[125%] flex flex-col gap-2">
@@ -70,7 +51,7 @@ async function Footer() {
                 <span className="footer__span p-1.5 rounded border bg-white/10" aria-hidden="true">
                   <Mail width={14} height={14}/>
                 </span>
-                <p className="footer__text text-sm/[110%]">contato.educadrones@gmail.com</p>
+                <p className="footer__text text-sm/[110%] wrap-anywhere sm:wrap-normal">contato.educadrones@gmail.com</p>
               </li>
 
               <li className="footer__item flex items-center gap-2">
@@ -89,15 +70,15 @@ async function Footer() {
       </div>
 
       {/* PARCEIROS E COLABORADORES */}
-      <div className="footer__content max-w-[1400px] w-full flex flex-col items-center gap-4 border-t border-solid border-ds-blue-40 pt-6">
+      <div className="footer__content max-w-[1400px] w-full flex flex-col items-start md:items-center gap-4 border-t border-solid border-ds-blue-40 pt-6">
         <h2 className="footer__title uppercase text-[0.75rem] text-ds-blue-40 font-bold">PARCEIROS E COLABORADORES</h2>
 
-        <ul className="footer__wrapper flex justify-center gap-16 list-none text-ds-blue-40 text-sm leading-[120%]">
+        <ul className="footer__wrapper flex flex-col w-full md:flex-row items-start justify-center gap-6 md:gap-16 list-none text-ds-blue-40 text-sm leading-[120%] flex-wrap">
 
           {/* Prefeitura Municipal */}
           <li className="footer__item">
             <a className="footer__link flex justify-center items-center gap-2" href="https://www.guanambi.ba.gov.br/" target="_blank">
-              <Image src={prefeturaDeGuanambi} alt="" aria-hidden="true"/>
+              <Image className="footer__image shrink-0" src={prefeturaDeGuanambi} alt="" aria-hidden="true"/>
               <span className="footer_text">
                 Prefeitura Municipal <br/>
                 de Guanambi
@@ -109,7 +90,7 @@ async function Footer() {
           {/* CETEIA */}
           <li className="footer__item">
             <a className="footer__link flex justify-center items-center gap-2" href="https://www.instagram.com/ceteia_ifbaiano/" target="_blank">
-              <Image src={ceteia} alt="" aria-hidden="true"/>
+              <Image className="footer__image shrink-0" src={ceteia} alt="" aria-hidden="true"/>
               <span className="footer_text text-[0.75rem]/[120%]">
                 <strong className="font-normal text-sm/[120%]">CETEIA - </strong>Centro de Estudos <br/>
                 Tecnológicos em Informática e Agronomia
@@ -121,7 +102,7 @@ async function Footer() {
           {/* IF Baiano */}
           <li className="footer__item">
             <a className="footer__link flex justify-center items-center gap-2" href="https://ifbaiano.edu.br/portal/" target="_blank">
-              <Image src={ifBaiano} alt="" aria-hidden="true"/>
+              <Image className="footer__image shrink-0" src={ifBaiano} alt="" aria-hidden="true"/>
               <span className="footer_text">
                 IF Baiano <br/>
                 <span className="footer__span text-[0.75rem]/[120%]"><em>Campus</em> Guanambi</span>
@@ -133,9 +114,9 @@ async function Footer() {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="footer__content max-w-[1400px] w-full flex justify-between pt-6 border-t border-solid border-ds-blue-40">
-        <p className="footer__text text-[0.75rem] text-ds-blue-40">Copyright © 2025 Educa Drones Todos os direitos reservados. </p>
-        <p className="footer__text text-[0.75rem] text-ds-blue-40">Desenvolvido por Gustavo Costa</p>
+      <div className="footer__content max-w-[1400px] w-full flex flex-col md:flex-row items-center justify-between pt-6 border-t border-solid border-ds-blue-40">
+        <p className="footer__text text-[0.75rem] text-ds-blue-40 text-center">Copyright © 2025 Educa Drones Todos os direitos reservados. </p>
+        <p className="footer__text text-[0.75rem] text-ds-blue-40 text-center">Desenvolvido por Gustavo Costa</p>
       </div>
     </footer>
   )

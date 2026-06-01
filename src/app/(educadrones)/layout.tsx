@@ -2,6 +2,7 @@ import React from 'react'
 
 /* ======================================================================== */
 /* IMPORTAÇÃO DE COMPONENTES */
+import SkipLink from '@/components/acessibility/SkipLink'
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
 
@@ -21,9 +22,10 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
 
   return (
     <html lang="pt-br">
-      <body className='grid grid-rows-[auto_1fr_auto] min-h-screen'>
-        <Header/>
-        <main>{children}</main>
+      <body className='flex flex-col min-h-screen'>
+        <SkipLink/>
+        <Header absolute={true}/>
+        <main id='main' className='main grow'>{children}</main>
         <Footer/>
       </body>
     </html>

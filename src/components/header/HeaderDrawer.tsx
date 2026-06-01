@@ -1,0 +1,71 @@
+'use client'
+
+import Link from "next/link"
+import { useState } from "react"
+import { FocusTrap } from "focus-trap-react"
+
+import { X, Menu } from "lucide-react"
+
+function HeaderDrawer(){
+  const [isOpen, setIsOpen] = useState(false)
+
+  function close() {
+    setIsOpen(false)
+  }
+
+  return(
+    <>
+      {/* BOTÃO SANDUÍCHE */}
+      <button
+        className="headerDrawer__button md:hidden cursor-pointer"
+        onClick={() => setIsOpen(true)}
+        aria-label="Abrir menu de navegação"
+        aria-expanded={isOpen}
+        aria-controls="header-drawer"
+      >
+        <Menu className='headerDrawer__icon' size={24} strokeWidth={2} aria-hidden="true"/>
+      </button>
+
+      {/* OVERLAY */}
+      <div
+        className={`fixed inset-0 bg-black/30 z-10 ${ isOpen ? 'block' : 'hidden'}`}
+        aria-hidden="true"
+        onClick={close}
+      />
+
+      {/* DRAWER */}
+      <FocusTrap active={isOpen} focusTrapOptions={{ onDeactivate: close, initialFocus: '#drawer-close' }}>
+        <div
+          id="header-drawer"
+          className={`fixed top-0 left-0 w-full h-full max-w-[420px] bg-white z-20 p-5 flex flex-col gap-6 transition-transform bg-ds-yellow-5 text-ds-blue-130 ${ isOpen ? 'translate-x-0' : '-translate-x-full'}`}
+          role="dialog"
+          aria-modal={true}
+          aria-label="Menu de navegação"
+          inert={!isOpen}
+        >
+          <div className="headerDrawer__wrapper">
+            <button
+              id="drawer-close"
+              className="headerDrawer__button cursor-pointer"
+              onClick={close}
+              aria-label="Fechar menu"
+            >
+              <X className='headerDrawer__icon' size={24} strokeWidth={2} aria-hidden="true"/>
+            </button>
+          </div>
+
+          <nav className="headerDrawer__navigation">
+            <ul className="headerDrawer__list grid gap-1">
+              <li className="headerDrawer__item"><Link href="/" className="headerDrawer__link py-1 link-underline">Início</Link></li>
+              <li className="headerDrawer__item"><Link href="/blog" className="headerDrawer__link py-1 link-underline">Blog</Link></li>
+              <li className="headerDrawer__item"><Link href="/sobre" className="headerDrawer__link py-1 link-underline">Sobre</Link></li>
+              <li className="headerDrawer__item"><Link href="/integrantes" className="headerDrawer__link py-1 link-underline">Membros</Link></li>
+            </ul>
+          </nav>
+        </div>
+      </FocusTrap>
+    </>
+  )
+}
+
+export default HeaderDrawer

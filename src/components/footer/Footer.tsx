@@ -22,7 +22,7 @@ async function Footer() {
   const footer = await payload.findGlobal({ slug: 'footer' })
 
   return(
-    <footer className="footer bg-ds-blue-100 flex flex-col items-center md:px-10 px-5 py-8 gap-8 text-ds-yellow-10">
+    <footer className="footer bg-ds-blue-100 flex flex-col items-center background-section py-8 gap-8 text-ds-yellow-10">
       {/* INFORMAÇÕES ADICIONAIS E MENUS */}
       <div className="footer__content max-w-[1400px] w-full flex flex-wrap gap-8">
         <div className="footer__wrapper flex-1 basis-[320px]">

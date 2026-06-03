@@ -1,4 +1,12 @@
 import React from 'react'
+import { Poppins } from 'next/font/google'
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-poppins',
+})
 
 /* ======================================================================== */
 /* IMPORTAÇÃO DE COMPONENTES */
@@ -21,8 +29,8 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   const { children } = props
 
   return (
-    <html lang="pt-br">
-      <body className='flex flex-col min-h-screen'>
+    <html lang="pt-br" className={poppins.variable}>
+      <body className='flex flex-col min-h-screen border-ds-neutral-50'>
         <SkipLink/>
         <Header absolute={true}/>
         <main id='main' className='main grow'>{children}</main>

@@ -1,13 +1,21 @@
 'use client'
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { FocusTrap } from "focus-trap-react"
 
 import { X, Menu } from "lucide-react"
 
 function HeaderDrawer(){
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : ''
+
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }), [isOpen]
 
   function close() {
     setIsOpen(false)
@@ -28,13 +36,13 @@ function HeaderDrawer(){
 
       {/* OVERLAY */}
       <div
-        className={`fixed inset-0 bg-black/30 z-10 ${ isOpen ? 'block' : 'hidden'}`}
+        className={`fixed inset-0 bg-black/50 z-10 ${ isOpen ? 'block' : 'hidden'}`}
         aria-hidden="true"
         onClick={close}
       />
 
       {/* DRAWER */}
-      <FocusTrap active={isOpen} focusTrapOptions={{ onDeactivate: close, initialFocus: '#drawer-close' }}>
+      <FocusTrap active={isOpen} focusTrapOptions={{ onDeactivate: close, initialFocus: '#drawer-close', allowOutsideClick: true }}>
         <div
           id="header-drawer"
           className={`fixed top-0 left-0 w-full h-full max-w-[420px] bg-white z-20 p-5 flex flex-col gap-6 transition-transform bg-ds-yellow-5 text-ds-blue-130 ${ isOpen ? 'translate-x-0' : '-translate-x-full'}`}

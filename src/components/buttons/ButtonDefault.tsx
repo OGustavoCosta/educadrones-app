@@ -1,4 +1,4 @@
-import { LucideIcon } from "lucide-react"
+import { LucideIcon, Target } from "lucide-react"
 
 type Props = {
   text: string;
@@ -8,6 +8,7 @@ type Props = {
   link: string;
   color?: 'white' | 'blue' | 'yellow';
   variant?: 'outline' | 'solid';
+  target?: "_self" | "_blank";
 }
 
 function Button( props: Props){
@@ -19,7 +20,8 @@ function Button( props: Props){
     iconPosition = 'left', 
     link,
     color = 'white', 
-    variant = 'outline' 
+    variant = 'outline',
+    target
   } = props
   
   const colorClasses = {
@@ -51,8 +53,9 @@ function Button( props: Props){
         ${variant == 'outline' ? 'border border-current' : ''}
       `}
       href={link}
+      target={target}
     >
-      {Icon && <Icon size={18} strokeWidth={2} aria-hidden="true"/>}
+      {Icon && <Icon size={14} strokeWidth={2} aria-hidden="true"/>}
       <span className={`button__span whitespace-nowrap ${textColor && textColorClasses[textColor]}`}>
         {text}
       </span>

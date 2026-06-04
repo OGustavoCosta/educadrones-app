@@ -6,6 +6,9 @@ import { FocusTrap } from "focus-trap-react"
 
 import { X, Menu } from "lucide-react"
 
+import * as motion from "motion/react-client"
+import { fadeDownItem } from "@/lib/animation"
+
 function HeaderDrawer(){
   const [isOpen, setIsOpen] = useState(false)
 
@@ -24,15 +27,18 @@ function HeaderDrawer(){
   return(
     <>
       {/* BOTÃO SANDUÍCHE */}
-      <button
+      <motion.button
         className="headerDrawer__button md:hidden cursor-pointer"
         onClick={() => setIsOpen(true)}
         aria-label="Abrir menu de navegação"
         aria-expanded={isOpen}
         aria-controls="header-drawer"
+        variants={fadeDownItem}
+        initial="hidden"
+        animate="visible"
       >
         <Menu className='headerDrawer__icon' size={24} strokeWidth={2} aria-hidden="true"/>
-      </button>
+      </motion.button>
 
       {/* OVERLAY */}
       <div

@@ -2,10 +2,10 @@ import * as motion from "motion/react-client"
 import { fadeLeftItem } from "@/lib/animation"
 
 type Props = {
-  badge: string
-  id: string
-  children: React.ReactNode
-  className?: string
+  badge: string;
+  id: string;
+  children: React.ReactNode;
+  className?: string;
 }
 
 function SectionHeader({ badge, id, children, className }: Props) {

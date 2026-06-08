@@ -9,19 +9,21 @@ type Props = {
   color?: 'white' | 'blue' | 'yellow';
   variant?: 'outline' | 'solid';
   target?: "_self" | "_blank";
+  rel?: string;
 }
 
 function Button( props: Props){
 
-  const { 
+  const {
     text,
-    textColor, 
-    icon: Icon, 
-    iconPosition = 'left', 
+    textColor,
+    icon: Icon,
+    iconPosition = 'left',
     link,
-    color = 'white', 
+    color = 'white',
     variant = 'outline',
-    target
+    target,
+    rel
   } = props
   
   const colorClasses = {
@@ -54,6 +56,7 @@ function Button( props: Props){
       `}
       href={link}
       target={target}
+      rel={rel}
     >
       {Icon && <Icon size={14} strokeWidth={2} aria-hidden="true"/>}
       <span className={`button__span whitespace-nowrap ${textColor && textColorClasses[textColor]}`}>

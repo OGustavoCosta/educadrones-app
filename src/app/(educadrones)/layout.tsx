@@ -17,6 +17,7 @@ import Footer from '@/components/footer/Footer'
 /* ======================================================================== */
 /* IMPORTAÇÃO DE CSS */
 import './base.css'
+import MotionProvider from '@/components/providers/MotionProvider'
 
 /* ======================================================================== */
 /* METADADOS */
@@ -57,10 +58,12 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="pt-br" className={poppins.variable}>
       <body className='flex flex-col min-h-screen bg-ds-neutral-50 overflow-x-hidden max-w-dvw'>
-        <SkipLink/>
-        <Header absolute={true}/>
-        <main id='main' className='main grow'>{children}</main>
-        <Footer/>
+        <MotionProvider>
+          <SkipLink/>
+          <Header absolute={true}/>
+          <main id='main' className='main grow'>{children}</main>
+          <Footer/>
+        </MotionProvider>
       </body>
     </html>
   )

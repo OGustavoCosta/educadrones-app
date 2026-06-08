@@ -1,6 +1,6 @@
 /* ÍCONES */
 import { ArrowDown, ArrowUpRight, Mail, MapPin } from "lucide-react"
-import { Whatsapp } from "@/components/icon"
+import { Whatsapp } from "@/components/Icons"
 
 /* MOTION */
 import * as motion from "motion/react-client"
@@ -10,6 +10,7 @@ import { motionContainer, fadeLeftItem, fadeDownItem, fadeUpItem, fadeRightItem 
 import Button from "@/components/buttons/ButtonDefault"
 import CollageTrio from "@/components/collages/CollageTrio"
 import SectionHeader from "@/components/sections/SectionHeader"
+import Details from "@/components/Details"
 
 function HomePage() {
   return (
@@ -146,6 +147,123 @@ function HomePage() {
         </section>
       </div>
 
+      {/* FAQ */}
+      <div className="faq__background background-section py-16 bg-ds-neutral-0">
+        <section className="faq w-full max-w-[1280px] grid md:grid-cols-[280px_1fr] lg:grid-cols-[400px_1fr] gap-14 md:gap-6 lg:gap-10 items-start" aria-labelledby="faq-title">
+
+          <motion.div
+            className="faq__content w-full flex flex-col gap-4"
+            variants={motionContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <SectionHeader badge="FAQ" id="faq-title">
+              Dúvidas <br/> frequentes
+            </SectionHeader>
+
+            <motion.div className="faq__body flex flex-col gap-3 text-ds-neutral-500 text-sm/[150%] max-w-100 lg:text-base/[150%]">
+              <motion.p className="faq__text" variants={fadeLeftItem}>Respostas diretas para as perguntas que gestores e professores mais fazem antes de aderir ao projeto.</motion.p>
+            </motion.div>
+
+            <motion.div className="faq__buttons flex flex-wrap gap-4">
+              <motion.div className="faq__wrapper" variants={fadeUpItem}>
+                <Button
+                  text="Falar com a equipe"
+                  link="#"
+                  variant="solid"
+                  color="blue"
+                />
+              </motion.div>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="faq__list flex flex-col gap-5"
+            variants={motionContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.div variants={fadeUpItem}>
+              <Details title="Quem pode participar do projeto Educa Drones?">
+                O projeto Educa Drones tem como público alvo estudantes e professores de escolas e universidades, sejam elas públicas ou particulares.
+              </Details>
+            </motion.div>
+
+            <motion.div variants={fadeUpItem}>
+              <Details title="Como implementar o Educa Drones em minha escola?">
+                Para implementar o Educa Drones em sua escola, é essencial contar com um ou mais professores dedicados, responsáveis pela coordenação das atividades. Além disso, será necessário adquirir os recursos adequados para realizar as oficinas, garantindo uma experiência prática e inovadora para os alunos.
+              </Details>
+            </motion.div>
+
+            <motion.div variants={fadeUpItem}>
+              <Details title="O Educa Drones é adequado para todas as idades?">
+                O projeto Educa Drones se adapta a públicos de diferentes idades, entretanto sugerimos que a idade mínima seja de 14 anos.
+              </Details>
+            </motion.div>
+
+            <motion.div variants={fadeUpItem}>
+              <Details title="Quais recursos são necessários para implementar o Educa Drones na minha escola?">
+                Para implementação é necessário obter um kit de Drone Educacional, ferramentas básicas de soldagem e um computador ou notebook. Além disso o Educa Drones disponiliza material didático gratuito e o treinamento de montagem e configuração de drones
+              </Details>
+            </motion.div>
+
+            <motion.div variants={fadeUpItem}>
+              <Details title="O Educa Drones oferece suporte técnico para as escolas participantes?">
+                Todas as escolas participantes recebem suporte técnico individual através dos canais de comunicação: telefone, whatsapp, email e rede social.
+              </Details>
+            </motion.div>
+          </motion.div>
+
+        </section>
+      </div>
+
+      {/* CONTATO */}
+      <div className="contact__background background-section py-16">
+        <section className="contact w-full max-w-[1280px] grid md:grid-cols-2 gap-10 items-center" aria-labelledby="contact-title">
+
+          <motion.div
+            className="contact__content flex flex-col gap-5"
+            variants={motionContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+
+            <motion.div className="contact__header flex flex-col gap-3 text-ds-neutral-500 text-sm/[150%] lg:text-base/[150%]">
+              <SectionHeader badge="Participe" id="contact-title" className="max-w-100">
+                Pronto para levar o futuro à <em className="text-ds-blue-60">sua escola?</em>
+              </SectionHeader>
+
+              <motion.p variants={fadeLeftItem}>Entre em contato com nossa equipe. Apresentamos o projeto, alinhamos as possibilidades e iniciamos o planejamento do treinamento — sem burocracia.</motion.p>
+            </motion.div>
+
+            <motion.div className="contact__card w-full flex flex-col gap-4 p-6 bg-ds-neutral-0 rounded-lg border border-ds-neutral-200/50" variants={fadeLeftItem} aria-label="O que acontece depois">
+
+              <h3 className="contact__title text-sm/[125%] text-ds-blue-130 uppercase font-semibold">O que acontece depois:</h3>
+
+              <ol className="contact__list list-decimal list-outside pl-4 space-y-2 marker:text-ds-blue-130 marker:font-bold">
+                <li className="contact__item text-sm/[125%] text-ds-neutral-400">Nossa equipe entra em contato em até 2 dias úteis</li>
+                <li className="contact__item text-sm/[125%] text-ds-neutral-400">Apresentamos o projeto e tiramos dúvidas</li>
+                <li className="contact__item text-sm/[125%] text-ds-neutral-400">Planejamos juntos o treinamento e a formação da equipe</li>
+              </ol>
+            </motion.div>
+          </motion.div>
+
+          <motion.div
+            className="contact__form flex flex-col gap-5"
+            variants={motionContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+        
+          </motion.div>
+
+        </section>
+      </div>
+
       {/* LOCALIZAÇÃO */}
       <div className="location__background background-section py-16 bg-ds-neutral-0">
         <section className="location w-full max-w-[1280px] grid md:grid-cols-2 gap-10 items-center" aria-labelledby="location-title">
@@ -181,22 +299,24 @@ function HomePage() {
               <motion.p variants={fadeLeftItem}>O Educa Drones opera no Centro de Estudos Tecnológicos em Informática e Agronomia (CETEIA) do Instituto Federal Baiano – Campus Guanambi.</motion.p>
             </motion.div>
 
-            <motion.div className="location__card w-full flex flex-col gap-2 p-6 bg-ds-neutral-50 rounded-lg border border-[#CACACA]/50" variants={fadeLeftItem} aria-label="Endereço e Contato">
-              <address className="location__item flex items-start gap-2">
-                <MapPin size={16} className="text-ds-blue-130 shrink-0" aria-hidden="true"/>
-                <p className="location__text text-[0.75rem]/[125%] text-ds-neutral-400">Caixa Postal Nº 08 Distrito de, Saída p/ ceraíma - n, Zona Rural, Guanambi – BA, 46430-000</p>
-              </address>
+            <motion.address className="location__card p-6 bg-ds-neutral-50 rounded-lg border border-ds-neutral-200/50" variants={fadeLeftItem} aria-label="Endereço e Contato">
+              <ul className="location__list w-full flex flex-col gap-2">
+                <li className="location__item flex items-start gap-2">
+                  <MapPin size={16} className="text-ds-blue-130 shrink-0" aria-hidden="true"/>
+                  <p className="location__text text-[0.75rem]/[125%] text-ds-neutral-400">Caixa Postal Nº 08 Distrito de, Saída p/ ceraíma - n, Zona Rural, Guanambi – BA, 46430-000</p>
+                </li>
 
-              <address className="location__item flex items-start gap-2">
-                <Mail size={16} className="text-ds-blue-130 shrink-0" aria-hidden="true"/>
-                <a className="location__link link-underline block text-[0.75rem]/[125%] text-ds-neutral-400" target="_blank" href="mailto:contato.educadrones@gmail.com">contato.educadrones@gmail.com</a>
-              </address>
+                <li className="location__item flex items-start gap-2">
+                  <Mail size={16} className="text-ds-blue-130 shrink-0" aria-hidden="true"/>
+                  <a className="location__link link-underline block text-[0.75rem]/[125%] text-ds-neutral-400" target="_blank" rel="noopener noreferrer" href="mailto:contato.educadrones@gmail.com">contato.educadrones@gmail.com</a>
+                </li>
 
-              <address className="location__item flex items-start gap-2">
-                <Whatsapp size={16} className="text-ds-blue-130" aria-hidden="true"/>
-                <a className="location__link link-underline block text-[0.75rem]/[125%] text-ds-neutral-400" target="_blank" href="tel:+557799999999">(77) 99999-9999</a>
-              </address>
-            </motion.div>
+                <li className="location__item flex items-start gap-2">
+                  <Whatsapp size={16} className="text-ds-blue-130" aria-hidden="true"/>
+                  <a className="location__link link-underline block text-[0.75rem]/[125%] text-ds-neutral-400" target="_blank" rel="noopener noreferrer" href="tel:+557799999999">(77) 99999-9999</a>
+                </li>
+              </ul>
+            </motion.address>
 
             <motion.div className="location__buttons flex flex-wrap gap-4">
               <motion.div variants={fadeUpItem}>
@@ -204,6 +324,7 @@ function HomePage() {
                   text="Abrir no mapa"
                   link="https://maps.app.goo.gl/kf8pz8uiDvLF6Cyf9"
                   target="_blank"
+                  rel="noopener noreferrer"
                   icon={ArrowUpRight}
                   iconPosition="right"
                   variant="solid"

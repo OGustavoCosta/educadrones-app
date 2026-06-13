@@ -33,8 +33,8 @@ function Button( props: Props){
       blue:   'text-ds-blue-100 hover:bg-ds-blue-100/10',
     },
     solid: {
-      white:  'text-ds-blue-100 bg-ds-yellow-10 hover:bg-ds-yellow-5',
-      yellow: 'text-ds-blue-100 bg-ds-yellow-60 hover:bg-ds-yellow-40',
+      white:  'text-ds-blue-110 bg-ds-yellow-10 hover:bg-ds-yellow-5',
+      yellow: 'text-ds-blue-110 bg-ds-yellow-60 hover:bg-ds-yellow-40',
       blue:   'text-ds-yellow-10 bg-ds-blue-100 hover:bg-ds-blue-60',
     }
   }

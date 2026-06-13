@@ -11,8 +11,8 @@ const poppins = Poppins({
 /* ======================================================================== */
 /* IMPORTAÇÃO DE COMPONENTES */
 import SkipLink from '@/components/acessibility/SkipLink'
-import Header from '@/components/header/Header'
-import Footer from '@/components/footer/Footer'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 
 /* ======================================================================== */
 /* IMPORTAÇÃO DE CSS */

@@ -4,13 +4,16 @@ import { Whatsapp } from "@/components/Icons"
 
 /* MOTION */
 import * as motion from "motion/react-client"
-import { motionContainer, fadeLeftItem, fadeDownItem, fadeUpItem, fadeRightItem } from "@/lib/animation"
+import { motionContainer, fadeLeftItem, fadeUpItem } from "@/lib/animation"
 
 /* COMPONENTES */
 import Button from "@/components/buttons/ButtonDefault"
 import CollageTrio from "@/components/collages/CollageTrio"
 import SectionHeader from "@/components/sections/SectionHeader"
 import Details from "@/components/Details"
+
+/* SEÇÕES */
+import History from "./_components/History"
 
 function HomePage() {
   return (
@@ -138,7 +141,8 @@ function HomePage() {
           </motion.div>
 
           <div className="about__wrapper">
-            <CollageTrio 
+            <CollageTrio
+              className="max-w-lg" 
               image01={{src: "https://picsum.photos/seed/drones1/600/600" , alt: "Alunos do Educa Drones operando um drone em competição"}} 
               image02={{ src: "https://picsum.photos/seed/drones2/400/600", alt: "Testes de voo pré-competição"}} 
               image03={{ src: "https://picsum.photos/seed/drones3/600/400", alt: "Equipe durante a fórmula drone"}} 
@@ -146,6 +150,9 @@ function HomePage() {
           </div>
         </section>
       </div>
+
+      {/* HISTÓRICO */}
+      <History/>
 
       {/* FAQ */}
       <div className="faq__background background-section py-16 bg-ds-neutral-0">

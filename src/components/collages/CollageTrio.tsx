@@ -2,16 +2,17 @@ import * as motion from "motion/react-client"
 import { motionContainer, fadeDownItem, fadeRightItem, fadeUpItem } from "@/lib/animation"
 
 type Props = {
+  className?: string,
   image01: { src: string, alt: string },
   image02: { src: string, alt: string },
   image03: { src: string, alt: string },
 }
 
-function CollageTrio({ image01, image02, image03 }: Props){
+function CollageTrio({ className, image01, image02, image03 }: Props){
 
   return(
     <motion.div
-      className="about__figures relative max-w-lg aspect-square md:translate-y-6 justify-self-center w-full"
+      className={`about__figures relative aspect-square justify-self-center w-full self-start ${className}`}
       variants={motionContainer}
       initial="hidden"
       whileInView="visible"

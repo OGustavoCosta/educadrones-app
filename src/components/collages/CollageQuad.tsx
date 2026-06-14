@@ -20,25 +20,25 @@ function CollageQuad({ className, image01, image02, image03, image04 }: Props){
       viewport={{ once: true }}
     >
       <motion.div
-        className="about__figure w-[30%] aspect-square absolute top-[16%] left-[16%] rounded-xl overflow-hidden border-4 border-ds-yellow-5 hover:scale-101 transition-transform z-2"
+        className="about__figure w-[30%] aspect-square absolute top-[16%] left-[16%] rounded-xl overflow-hidden border-2 md:border-4 border-ds-yellow-5 hover:scale-101 transition-transform z-2"
         variants={fadeDownItem}
       >
         <img className="w-full h-full object-cover" src={image01.src} alt={image01.alt}/>
       </motion.div>
       <motion.div
-        className="about__figure w-[65%] aspect-3/2 rounded-xl overflow-hidden border-4 border-ds-yellow-5 absolute top-0 right-0 hover:scale-101 transition-transform"
+        className="about__figure w-[65%] aspect-3/2 rounded-md xs:rounded-lg mlg:rounded-xl overflow-hidden border-2 md:border-4 border-ds-yellow-5 absolute top-0 right-0 hover:scale-101 transition-transform"
         variants={fadeRightItem}
       >
         <img className="w-full h-full object-cover" src={image02.src} alt={image02.alt}/>
       </motion.div>
       <motion.div
-        className="about__figure w-[65%] aspect-3/2 rounded-xl overflow-hidden border-4 border-ds-yellow-5 absolute bottom-0 left-0 hover:scale-101 transition-transform"
+        className="about__figure w-[65%] aspect-3/2 rounded-md xs:rounded-lg mlg:rounded-xl overflow-hidden border-2 md:border-4 border-ds-yellow-5 absolute bottom-0 left-0 hover:scale-101 transition-transform"
         variants={fadeLeftItem}
       >
         <img className="w-full h-full object-cover" src={image03.src} alt={image03.alt}/>
       </motion.div>
       <motion.div
-        className="about__figure w-[42%] aspect-3/2 rounded-xl overflow-hidden border-4 border-ds-yellow-5 absolute bottom-[12%] right-[4%] hover:scale-101 transition-transform"
+        className="about__figure w-[42%] aspect-3/2 rounded-md xs:rounded-lg mlg:rounded-xl overflow-hidden border-2 md:border-4 border-ds-yellow-5 absolute bottom-[12%] right-[4%] hover:scale-101 transition-transform"
         variants={fadeUpItem}
       >
         <img className="w-full h-full object-cover" src={image04.src} alt={image04.alt}/>

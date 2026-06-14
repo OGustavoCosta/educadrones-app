@@ -42,6 +42,10 @@
   --color-ds-neutral-50:  #F7F7F7;
   --color-ds-neutral-0:   #FFFFFF;
 
+  /* ── BREAKPOINTS CUSTOMIZADOS ── */
+  --breakpoint-xs: 32rem;
+  --breakpoint-mlg: 62rem;
+
   /* ── TIPOGRAFIA ── */
   --font-ds-base: var(--font-poppins), sans-serif;
 }

@@ -2,6 +2,7 @@ import { LucideIcon, Target } from "lucide-react"
 
 type Props = {
   text: string;
+  textMobile?: string;
   textColor?: 'white' | 'blue' | 'yellow';
   icon?: LucideIcon;
   iconPosition?: 'left' | 'right';
@@ -16,6 +17,7 @@ function Button( props: Props){
 
   const {
     text,
+    textMobile,
     textColor,
     icon: Icon,
     iconPosition = 'left',
@@ -34,7 +36,7 @@ function Button( props: Props){
     },
     solid: {
       white:  'text-ds-blue-110 bg-ds-yellow-10 hover:bg-ds-yellow-5',
-      yellow: 'text-ds-blue-110 bg-ds-yellow-60 hover:bg-ds-yellow-40',
+      yellow: 'text-ds-blue-110 bg-ds-yellow-60 hover:bg-ds-yellow-40/99',
       blue:   'text-ds-yellow-10 bg-ds-blue-100 hover:bg-ds-blue-60',
     }
   }
@@ -59,9 +61,14 @@ function Button( props: Props){
       rel={rel}
     >
       {Icon && <Icon size={14} strokeWidth={2} aria-hidden="true"/>}
-      <span className={`button__span whitespace-nowrap ${textColor && textColorClasses[textColor]}`}>
-        {text}
-      </span>
+      {textMobile ? (
+        <>
+          <span className={`button__span xs:hidden ${textColor && textColorClasses[textColor]}`}>{textMobile}</span>
+          <span className={`button__span hidden xs:inline ${textColor && textColorClasses[textColor]}`}>{text}</span>
+        </>
+      ) : (
+        <span className={`button__span xs:whitespace-nowrap ${textColor && textColorClasses[textColor]}`}>{text}</span>
+      )}
     </a>
   )
 }

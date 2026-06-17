@@ -25,6 +25,9 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: path.resolve(dirname),
   },
+  experimental: {
+    viewTransition: true,
+  },
 }
 
 export default withPayload(nextConfig, { devBundleServerPackages: false })
